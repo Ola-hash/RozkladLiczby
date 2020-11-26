@@ -21,5 +21,16 @@ public class RozkladLiczbyTest {
         rozkladLiczby.czynnikiPierwsze(0);
     }
 
+    @Test
+    public void shouldReturnTheCorrectArray() throws Exception {
+        int[] result = rozkladLiczby.czynnikiPierwsze(6);
+        Assert.assertArrayEquals(new int[]{2, 3}, result);
+    }
 
+    @Test
+    public void shouldReturnTheCorrectString() throws Exception {
+        String result = Main.zliczanieWystapien(new int[]{2, 2, 2, 3, 5});
+        String expectedResult = "2^3*3*5";
+        Assert.assertEquals(expectedResult, result);
+    }
 }
